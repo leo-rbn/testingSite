@@ -118,7 +118,7 @@ jobs:
           hugo build \
             --gc \
             --minify \
-            --baseURL "testing.leorbn.co.uk" \
+            --baseURL "https://testing.leorbn.co.uk" \
             --cacheDir "${{ runner.temp }}/.cache/hugo"
 
       - name: Cache save
