@@ -41,7 +41,10 @@ h1 span, h2 span { color: var(--muted); }
 .text-link:hover { border-color: var(--accent); }
 .work, .about { padding-top: 116px; }
 .section-heading { border-top: 1px solid var(--line); padding-top: 20px; }
+.work .section-heading { border-top: none; padding-top: 0; }
+.about .section-heading { border-top: none; padding-top: 0; }
 h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.08; margin: 28px 0 64px; }
+.work .project-list { padding-top: 18px; }
 .project { border-top: 1px solid var(--line); display: grid; grid-template-columns: 8% 52% 40%; min-height: 245px; padding: 26px 0; }
 .project:last-child { border-bottom: 1px solid var(--line); }
 .project-index, .project-type { color: var(--muted); font-size: 11px; }
@@ -51,7 +54,7 @@ h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.08; margin: 28px 0 64px
 .project-image { background: var(--surface); border-radius: 8px; display: block; height: 193px; margin-left: auto; object-fit: cover; width: min(100%, 300px); }
 .about { display: grid; gap: 9%; grid-template-columns: 43% 48%; padding-bottom: 135px; }
 .about h2 { margin-bottom: 0; }
-.about-copy { padding-top: 67px; }
+.about-copy { padding-top: 0; }
 .statement { font-family: 'Space Mono', monospace; font-size: 23px; line-height: 1.35; margin-bottom: 30px; }
 .about-copy > p:not(.statement) { color: var(--muted); font-size: 13px; max-width: 450px; }
 .capabilities { border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 9px 24px; margin-top: 46px; padding-top: 14px; }
