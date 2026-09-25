@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
-  --bg: #101110;
-  --surface: #171917;
-  --text: #e7e8df;
-  --muted: #858b82;
-  --line: #30352f;
-  --accent: #c6f36b;
+  --bg: #111111;
+  --surface: #1b1b1b;
+  --text: #f0f0f0;
+  --muted: #929292;
+  --line: #363636;
+  --accent: #d6d6d6;
   --max-width: 1180px;
 }
 
@@ -48,10 +48,7 @@ h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.08; margin: 28px 0 64px
 .project-type { margin-bottom: 21px; text-transform: uppercase; }
 .project h3 { font-size: 30px; margin-bottom: 12px; }
 .project-info > p:not(.project-type) { color: var(--muted); font-size: 13px; margin-bottom: 28px; max-width: 410px; }
-.project-mark { align-items: center; background: var(--surface); display: flex; font-family: 'Space Mono', monospace; font-size: 62px; justify-content: center; margin-left: auto; width: min(100%, 300px); }
-.mark-northstar { color: var(--accent); }
-.mark-field { color: #ef8f5a; font-size: 39px; }
-.mark-ground { color: #8ac7d9; }
+.project-image { background: var(--surface); border-radius: 8px; display: block; height: 193px; margin-left: auto; object-fit: cover; width: min(100%, 300px); }
 .about { display: grid; gap: 9%; grid-template-columns: 43% 48%; padding-bottom: 135px; }
 .about h2 { margin-bottom: 0; }
 .about-copy { padding-top: 67px; }
@@ -76,7 +73,7 @@ h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.08; margin: 28px 0 64px
   .work, .about { padding-top: 86px; }
   h2 { margin-bottom: 43px; }
   .project { grid-template-columns: 16% 84%; }
-  .project-mark { grid-column: 2; margin: 30px 0 0; min-height: 150px; width: 100%; }
+  .project-image { grid-column: 2; height: 150px; margin: 30px 0 0; width: 100%; }
   .about { display: block; padding-bottom: 100px; }
   .about-copy { padding-top: 0; }
   .about h2 { margin-bottom: 60px; }
