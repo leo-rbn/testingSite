@@ -1,0 +1,16 @@
+{{- $items := slice -}}
+{{- range .Site.RegularPages -}}
+  {{- $content := .Content | plainify | htmlUnescape -}}
+  {{- $summary := .Summary | plainify | htmlUnescape -}}
+  {{- $item := dict
+    "title" .Title
+    "url" .RelPermalink
+    "type" .Type
+    "summary" $summary
+    "content" $content
+    "tags" .Params.tags
+    "categories" .Params.categories
+  -}}
+  {{- $items = $items | append $item -}}
+{{- end -}}
+{{- $items | jsonify -}}

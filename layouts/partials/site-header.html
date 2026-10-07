@@ -1,0 +1,90 @@
+<header class="site-header shell">
+  <div class="header-branding">
+    {{ with resources.Get "logo.png" }}
+    <a class="wordmark" href="{{ "/" | relURL }}" aria-label="leorbn home">
+      leorbn
+    </a>
+    {{ end }}
+  </div>
+
+  <nav class="primary-nav" aria-label="Primary navigation">
+    <div class="nav-item">
+      <a class="nav-trigger" href="{{ "/projects/" | relURL }}">Projects</a>
+      <div class="nav-menu" aria-label="Projects menu">
+        <a href="{{ "/projects/" | relURL }}">All projects</a>
+        <a href="{{ "/projects/cybersecurity-lab/" | relURL }}">Cybersecurity Lab</a>
+        <a href="{{ "/projects/epq/" | relURL }}">EPQ</a>
+        <a href="{{ "/projects/apexos/" | relURL }}">ApexOS</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a class="nav-trigger" href="{{ "/" | relURL }}#about">About</a>
+      <div class="nav-menu" aria-label="About menu">
+        <a href="{{ "/" | relURL }}#about">About me</a>
+        <a href="{{ "/" | relURL }}#work">Projects</a>
+        <a href="{{ "/" | relURL }}#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a class="nav-trigger" href="{{ "blog/" | relURL }}">Blog</a>
+      <div class="nav-menu" aria-label="Blog menu">
+        <a href="{{ "blog/" | relURL }}">All posts</a>
+        <a href="{{ "blog/2026-09-28/" | relURL }}">Latest post</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a class="nav-trigger" href="{{ "/" | relURL }}#contact">Contact</a>
+      <div class="nav-menu" aria-label="Contact menu">
+        <a href="mailto:contact@leorbn.co.uk">Email me</a>
+        <a href="{{ "/" | relURL }}#contact">Start a conversation</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="header-tools">
+    <form class="search-form" action="{{ "/search/" | relURL }}" method="get" role="search">
+      <label class="search-box" aria-label="Search site">
+        <span aria-hidden="true">⌕</span>
+        <input type="search" name="q" placeholder="Search" aria-label="Search site" />
+      </label>
+    </form>
+
+    <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+      <span class="theme-toggle-label">Light</span>
+    </button>
+  </div>
+</header>
+
+<script>
+  (() => {
+    const root = document.documentElement;
+    const button = document.querySelector('.theme-toggle');
+    const icon = document.querySelector('.theme-toggle-icon');
+    const label = document.querySelector('.theme-toggle-label');
+
+    const applyTheme = (theme) => {
+      const safeTheme = theme === 'light' ? 'light' : 'dark';
+      root.setAttribute('data-theme', safeTheme);
+      document.body.dataset.theme = safeTheme;
+
+      const isLight = safeTheme === 'light';
+      button?.setAttribute('aria-pressed', String(isLight));
+      if (icon) icon.textContent = isLight ? '☀' : '☾';
+      if (label) label.textContent = isLight ? 'Light' : 'Dark';
+    };
+
+    const savedTheme = localStorage.getItem('theme');
+    const preferredTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    applyTheme(savedTheme || preferredTheme);
+
+    button?.addEventListener('click', () => {
+      const nextTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', nextTheme);
+      applyTheme(nextTheme);
+    });
+  })();
+</script>

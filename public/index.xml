@@ -6,6 +6,49 @@
     <description>Recent content on leorbn</description>
     <generator>Hugo</generator>
     <language>en-uk</language>
+    <lastBuildDate>Wed, 07 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Entry 2</title>
+      <link>http://localhost:1313/blog/test/</link>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/test/</guid>
+      <description>&lt;p&gt;dsdsdsds&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Test Entry</title>
+      <link>http://localhost:1313/blog/2026-09-28/</link>
+      <pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2026-09-28/</guid>
+      <description>&lt;h2 id=&#34;heading-2&#34;&gt;Heading 2&lt;/h2&gt;&#xA;&lt;p&gt;This is text. I dont know what to write so im just going to ramble, this is a weird thing&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;print (&amp;#39;this is a code block)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;this&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;is&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;a&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;list&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Cybersecurity Lab</title>
+      <link>http://localhost:1313/projects/cybersecurity-lab/</link>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/cybersecurity-lab/</guid>
+      <description>&lt;h2 id=&#34;network&#34;&gt;Network&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m running &lt;a href=&#34;https://www.pfsense.org/&#34;&gt;PfSense&lt;/a&gt; on the &lt;a href=&#34;#optiplex-3010-server&#34;&gt;Optiplex&lt;/a&gt; in addition to &lt;a href=&#34;https://adguard.com/en/adguard-home/overview.html&#34;&gt;AdGuard Home&lt;/a&gt; as a base for my network.&lt;/p&gt;&#xA;&lt;p&gt;For hardware im using an unmanaged 8 port gigabit switch from TpLink and a 2.5 Gigabit PCI Express Ethernet Network Adapter for my LAN, using the inbuilt ethernet port as my WAN. I&amp;rsquo;m also planning to get a Wireless access point and perhaps terminate my own ethernet cables so I can perfect the lengths and make it look neat.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ApexOS</title>
+      <link>http://localhost:1313/projects/apexos/</link>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/apexos/</guid>
+      <description>&lt;h2&gt;&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Securing A network using a Raspberry Pi</title>
+      <link>http://localhost:1313/projects/epq/</link>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/epq/</guid>
+      <description>&lt;h2 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h2&gt;&#xA;&lt;p&gt;This was my EPQ and ended up getting a B. This was an artefact with the intention of improving network security and performance using a raspberry pi&lt;/p&gt;&#xA;&lt;p&gt;To do this i used &lt;a href=&#34;https://tailscale.com/&#34;&gt;Tailscale&lt;/a&gt; to access my NAS at the time and other resources. In addition to &lt;a href=&#34;https://pi-hole.net/&#34;&gt;PiHole&lt;/a&gt; which is a DNS Sinkhole which allows me to block adverts and malicious websites&lt;/p&gt;&#xA;&lt;h2 id=&#34;performance&#34;&gt;Performance&lt;/h2&gt;&#xA;&lt;p&gt;I found that there was improvement is consistency with the ad-blocker and faster loading times for websites. Tailscale did lower speed and consistency but not enough to cause a noticeable difference in performance. I did speed test to prove this, find them below:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>http://localhost:1313/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/search/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

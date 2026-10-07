@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on leorbn</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on leorbn</description>
+    <generator>Hugo</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cybersecurity Lab</title>
+      <link>http://localhost:1313/projects/cybersecurity-lab/</link>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/cybersecurity-lab/</guid>
+      <description>&lt;h2 id=&#34;network&#34;&gt;Network&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m running &lt;a href=&#34;https://www.pfsense.org/&#34;&gt;PfSense&lt;/a&gt; on the &lt;a href=&#34;#optiplex-3010-server&#34;&gt;Optiplex&lt;/a&gt; in addition to &lt;a href=&#34;https://adguard.com/en/adguard-home/overview.html&#34;&gt;AdGuard Home&lt;/a&gt; as a base for my network.&lt;/p&gt;&#xA;&lt;p&gt;For hardware im using an unmanaged 8 port gigabit switch from TpLink and a 2.5 Gigabit PCI Express Ethernet Network Adapter for my LAN, using the inbuilt ethernet port as my WAN. I&amp;rsquo;m also planning to get a Wireless access point and perhaps terminate my own ethernet cables so I can perfect the lengths and make it look neat.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

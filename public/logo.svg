@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" role="img" aria-labelledby="title desc">
+  <title id="title">leorbn</title>
+  <desc id="desc">A minimal logo for leorbn with a custom monogram and wordmark.</desc>
+  <rect x="2" y="8" width="34" height="34" rx="10" fill="#111827"/>
+  <path d="M15 15h8v19h-8zm0 0h18v7H15zm0 0V15h18v7H15z" fill="#F8FAFC" opacity="0.96"/>
+  <path d="M33 19h-8v-7h8v7zm-8 0V33h8v7h-8v-7h-7v-7h7z" fill="#7C3AED" opacity="0.9"/>
+  <text x="52" y="38" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="-1.5" fill="#111827">leorbn</text>
+  <circle cx="201" cy="20" r="3.5" fill="#7C3AED"/>
+</svg>

@@ -1,0 +1,58 @@
+<figure class="speed-chart" aria-labelledby="speed-chart-title">
+  <figcaption id="speed-chart-title">Speed Tests · Mbps (Each result is the average of 5 tests)</figcaption>
+  {{ $wifiLabels := split (.Get "wifi-labels" | default "") "," }}
+  {{ $ethernetLabels := split (.Get "ethernet-labels" | default "") "," }}
+  {{ $categories := slice
+    (dict "name" "Ethernet" "values" (slice 1016 1060 984 1108) "labels" $ethernetLabels)
+    (dict "name" "Wifi" "values" (slice 91.6 92.4 91 87.6 ) "labels" $wifiLabels)
+  }}
+  <div class="speed-chart-tabs" role="tablist" aria-label="Internet speed categories">
+    {{ range $index, $category := $categories }}
+      {{ $id := printf "speed-%s" ($category.name | urlize) }}
+      <button class="speed-chart-tab" id="{{ $id }}-tab" role="tab" type="button" aria-controls="{{ $id }}" aria-selected="{{ eq $index 0 }}">{{ $category.name }}</button>
+    {{ end }}
+  </div>
+  {{ range $index, $category := $categories }}
+    {{ $id := printf "speed-%s" ($category.name | urlize) }}
+    <section class="speed-chart-category" id="{{ $id }}" role="tabpanel" aria-labelledby="{{ $id }}-tab"{{ if ne $index 0 }} hidden{{ end }}>
+      <h3>{{ $category.name }} speed tests</h3>
+      <div class="speed-chart-bars">
+        {{ range $barIndex, $value := $category.values }}
+          {{ $scaleMin := 900 }}
+          {{ $scaleMax := 1100 }}
+          {{ if eq $category.name "Wifi" }}
+            {{ $scaleMin = 85 }}
+            {{ $scaleMax = 93 }}
+          {{ end }}
+          {{ $height := div (mul (sub $value $scaleMin) 100) (sub $scaleMax $scaleMin) }}
+          <div class="speed-bar">
+            <span class="speed-bar-value">{{ $value }}</span>
+            <span class="speed-bar-fill" style="--bar-height: {{ $height }}%;"></span>
+            {{ $label := printf "Test %d" (add $barIndex 1) }}
+            {{ if and (gt (len $category.labels) $barIndex) (ne (trim (index $category.labels $barIndex) " ") "") }}
+              {{ $label = trim (index $category.labels $barIndex) " " }}
+            {{ end }}
+            <span class="speed-bar-label">{{ $label }}</span>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+</figure>
+<script>
+  document.querySelectorAll('.speed-chart').forEach((chart) => {
+    const tabs = chart.querySelectorAll('[role="tab"]');
+    const panels = chart.querySelectorAll('[role="tabpanel"]');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((item) => item.setAttribute('aria-selected', item === tab));
+          panels.forEach((panel) => {
+            const isSelected = panel.id === tab.getAttribute('aria-controls');
+            panel.hidden = !isSelected;
+            panel.classList.toggle('is-active', isSelected);
+          });
+      });
+    });
+  });
+</script>

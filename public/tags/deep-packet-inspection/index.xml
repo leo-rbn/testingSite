@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Packet Inspection on leorbn</title>
+    <link>http://localhost:1313/tags/deep-packet-inspection/</link>
+    <description>Recent content in Deep Packet Inspection on leorbn</description>
+    <generator>Hugo</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/deep-packet-inspection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Protecting a Network with a raspberry pi</title>
+      <link>http://localhost:1313/projects/epq/</link>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/epq/</guid>
+      <description>&lt;p&gt;Bash, DNS, Wireshark, Docker, System Administration, Packet Inspection&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

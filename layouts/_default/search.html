@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search | {{ .Site.Title }}</title>
+  <link rel="icon" type="image/png" href="{{ "favicon.png" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}?v={{ now.Unix }}">
+</head>
+<body>
+  {{ partial "site-header.html" . }}
+
+  <main class="search-page shell">
+    <h1>Search</h1>
+    <div id="search-results" class="search-results" aria-live="polite"></div>
+  </main>
+
+  <script>
+    (function () {
+      const resultsContainer = document.getElementById('search-results');
+      const params = new URLSearchParams(window.location.search);
+      const query = (params.get('q') || '').trim().toLowerCase();
+
+      const renderEmptyState = (message) => {
+        resultsContainer.innerHTML = '<div class="search-result"><p>' + message + '</p></div>';
+      };
+
+      if (!query) {
+        renderEmptyState('Enter a search term to find content on this site.');
+        return;
+      }
+
+      fetch('{{ "/index.json" | relURL }}')
+        .then((response) => response.json())
+        .then((items) => {
+          const matches = items.filter((item) => {
+            const haystack = [
+              item.title || '',
+              item.summary || '',
+              item.content || '',
+              item.type || '',
+              Array.isArray(item.tags) ? item.tags.join(' ') : '',
+              Array.isArray(item.categories) ? item.categories.join(' ') : ''
+            ].join(' ').toLowerCase();
+
+            return haystack.includes(query);
+          });
+
+          if (!matches.length) {
+            renderEmptyState('No results found for “' + query + '”.');
+            return;
+          }
+
+          resultsContainer.innerHTML = matches.slice(0, 20).map((item) => {
+            const title = item.title || 'Untitled';
+            const summary = item.summary || item.content || 'No excerpt available.';
+            const shortSummary = summary.length > 180 ? summary.slice(0, 180) + '…' : summary;
+
+            return '<article class="search-result"><h2><a href="' + item.url + '">' + title + '</a></h2><p>' + shortSummary + '</p></article>';
+          }).join('');
+        })
+        .catch(() => {
+          renderEmptyState('Search is temporarily unavailable. Please try again later.');
+        });
+    })();
+  </script>
+</body>
+</html>
